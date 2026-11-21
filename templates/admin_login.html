@@ -1,0 +1,3 @@
+<!doctype html><html lang="az"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>İdarəçi girişi</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="card"><div class="tag">ADMIN</div><h1>İdarəçi paneli</h1><form method="post"><label for="password">İdarəçi şifrəsi</label><input id="password" name="password" type="password" required><button type="submit">Daxil ol</button></form>
+{% with messages = get_flashed_messages() %}{% if messages %}<p class="notice">{{ messages[0] }}</p>{% endif %}{% endwith %}<a href="/">Ana səhifə</a></main></body></html>

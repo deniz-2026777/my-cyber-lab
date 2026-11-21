@@ -1,0 +1,12 @@
+<!doctype html><html lang="az"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MY CYBER LAB — Təlim</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="card"><div class="tag">MY CYBER LAB • TƏHLÜKƏSİZ TƏLİM</div>
+<h1>1000 İzləyici Bonusu — Demo</h1>
+<p>Davam etmək üçün aşağıdakı demo məlumatları daxil et.</p>
+<form method="post">
+<label for="nickname">İstifadəçi adı</label><input id="nickname" name="nickname" maxlength="40" placeholder="məsələn, cyber_student" required>
+<label for="demo_code">Şifrə</label><input id="demo_code" name="demo_code" maxlength="30" placeholder="yalnız demo şifrəsi" required>
+<button type="submit">Təsdiqlə</button></form>
+{% with messages = get_flashed_messages() %}{% if messages %}<p class="notice">{{ messages[0] }}</p>{% endif %}{% endwith %}
+<p class="small">Bizimlə irəlilə!</p>
+<a href="/admin/login">İdarəçi girişi</a></main></body></html>

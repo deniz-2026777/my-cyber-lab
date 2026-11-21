@@ -1,0 +1,7 @@
+<!doctype html><html lang="az"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin panel</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="wide"><div class="top"><div><div class="tag">MY CYBER LAB</div><h1>İştirakçılar</h1></div><a href="/admin/logout">Çıxış</a></div>
+<p>Burada yalnız ləqəb və təlim kodu görünür. Heç bir real parol və təsdiq kodu toplanmır.</p>
+{% if rows %}<div class="tablewrap"><table><thead><tr><th>#</th><th>Ləqəb</th><th>Təlim kodu</th><th>Vaxt</th><th>Əməliyyat</th></tr></thead><tbody>
+{% for row in rows %}<tr><td>{{ row.id }}</td><td>{{ row.nickname }}</td><td>{{ row.demo_code }}</td><td>{{ row.created_at }}</td><td><form method="post" action="/admin/delete/{{ row.id }}" onsubmit="return confirm('Bu qeydi silmək istəyirsən?')"><button class="danger" type="submit">Sil</button></form></td></tr>{% endfor %}
+</tbody></table></div>{% else %}<p>Hələ iştirakçı yoxdur.</p>{% endif %}
+</main></body></html>
